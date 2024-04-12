@@ -1,0 +1,21 @@
+class DemoClass {
+    void throwingException() {
+        System.out.println("Siempre arrojaré un NullPointerException");
+        throw new NullPointerException("Arrojamiento forzado");
+    }
+}
+public class Excepcion4 {
+
+    public static void main(String[] args) {
+        System.out.println("***Ejemplo de excepción 4***\n");
+        DemoClass demo=new DemoClass();
+        try {
+            demo.throwingException();
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+}
