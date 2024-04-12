@@ -1,0 +1,40 @@
+
+import java.util.Random;
+
+public class Excepcion3 {
+
+    public static void main(String[] args) {
+        System.out.println("***Ejemplo de excepción 3***");
+        int a=5;
+        Random randomGenerator=new Random();
+        int b=randomGenerator.nextInt(3);
+        System.out.println("b="+b);
+        int c=0;
+        try {
+            c=a/b;
+            System.out.println("c="+c);
+            int[] arr=new int[2];
+            arr[0]=0;
+            arr[1]=c+1;
+            if(b%2==0) {
+                arr[2]=c+2;
+            }
+            else {
+                Object myObject=null;
+                int hashcode=myObject.hashCode();
+            }
+        }
+        catch(ArithmeticException ex) {
+            System.out.println("Atrapó a ArrayIndexOutOfBoundsException: "+ex.getMessage());
+            ex.printStackTrace();
+        }
+        catch(Exception ex) {
+            System.out.println("Atrapó a Excepcion: "+ex.getMessage());
+            ex.printStackTrace();
+        }
+        finally {
+            System.out.println("Estoy en el bloque finally");
+        }
+    }
+    
+}
